@@ -2,7 +2,7 @@
 A web-software that allows you to create vectorial graphics and export them in SVG format.
 Inspired by Adobe Illustrator.
 
-## Commands:
+## HOW it works:
 -**PRESS [m]**: for choosing the "rect tool"
 -**PRESS [e]**: for choosing the "ellipse tool"
 -**PRESS [+] or [-]** for choosing the scaling
