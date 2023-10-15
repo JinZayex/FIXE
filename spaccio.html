@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDICE</title>
+</head>
+<body>
+    <!-- Mod used:
+        <script src="./Mod_CreateWorkspace.js"></script>
+        <script src="./Mod_Download.js"></script>
+    -->
+
+    <h1 id="mainTitle">FIXE!</h1>
+    <h3>Ciao! Sei nell'indice</h3>
+
+    <!-- Label e input -->
+    <label for="w_idth">WIDTH:</label> 
+    <input type="text" id="w_idth"><br><br>
+    <!-- Label e input -->
+    <label for="h_eight">HEIGHT:</label> 
+    <input type="text" id="h_eight"><br><br>
+
+    <button id="myButton" style="background-color: #4CAF50;">Click me!</button>
+    <button id="randomCircle" style="background-color: #ccff00;">Random circle!</button>
+
+    <br><br><br>
+    
+
+    <!-- Il tag svg è un foglio bianco sul quale poniamo il nostro rect
+    Le dimensioni del foglio devono essere uguali o superiori
+    Alle dimensioni del "workspace" che desideriamo creare -->
+    <svg id="Motherspace" viewbox = "0 0 0 0">
+        <!-- Questo rettangolo corrisponde al "workspace" in Illustrator,
+            quindi il width e height devono corrispondere alle dimensioni del workspace -->
+        <rect id="workspace" x="0" y="0" style="fill:none; stroke-width:2; stroke:rgb(0,0,0)" />
+    </svg>
+
+
+    <script src="./Mod_ExpandWorkspace.js"></script>
+    <script src="./Mod_Download.js"></script>
+    <script src="./Tool_Rectangle.js"></script>
+
+</body>
+</html>
