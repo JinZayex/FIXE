@@ -2,7 +2,7 @@
 A web-software that allows you to create vectorial graphics and export them in SVG format.
 Inspired by Adobe Illustrator.
 
-![My Image](./FIXEimg)
+![My Image](FIXEimg)
 
 ### Development status:
   16 novembre 2022
