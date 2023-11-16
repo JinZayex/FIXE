@@ -8,8 +8,9 @@ Inspired by Adobe Illustrator.
   16 novembre 2022
   - **SCALING**: Zoom in and zoom out our space 
   - **TOOL BOX**: Box shows tools with icons and allows you to choose them clicking on them
-  - Restyling of the application 
-  15 october 2022
+  - Restyling of the application
+    
+15 october 2022
   - **RECT TOOL**: allows you to create rects and to view them while mousedown and mousemoving
   - **ELLIPSE TOOL**: allows you to create ellipse and to view them while mousedown and mousemoving
   - **EXPORT**: allows you to export the workspace with all the shapes created in SVG format
