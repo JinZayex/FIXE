@@ -3,40 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="transform.css">
-    <title>INDICE</title>
+    <title>FIXE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            background-color: rgb(180, 190, 200);
+        }
+        
+        /****************** H1 stuff *******************/
+        #Fixe_h1 {
+            text-align: center;
+            background-color: blue;
+            border: solid 2px;
+            font-size: larger;}
+
+        h1 {
+            padding: 2px;
+            margin: 0;
+            color: white;}
+
+        /****************** Menu button stuff *******************/
+        button {
+            background-color: transparent;
+            border: none;
+            margin: 0;
+            padding: 0;
+            text-align: inherit;
+            font: inherit;
+            font-weight: bold;
+            color: white;
+
+            font-size: larger;
+        }
+
+        /****************** BTN menu stuff *******************/
+        #menu-button-container {
+            padding: 2px;
+            background-color: rgb(0, 145, 255);
+            border-bottom: solid 2px;
+            border-left: solid 2px;
+            border-right: solid 2px;
+        }
+
+        button:hover {
+            color: rgb(228, 11, 11);
+        }
+
+        /****************** BTN tools stuff *******************/
+        #tools-btn-container {
+            background-color: rgb(0, 145, 255);
+            border-left: solid 2px;
+            border-right: solid 2px;
+            width: 70px;
+            height: 100vh;
+        }
+
+        .btn-tool:hover {
+            background-color: rgb(228, 11, 11);
+        }
+
+        /****************** SVG stuff *******************/
+        svg {
+            position: absolute;
+            transform: scale(1);
+            top: 80px;      /* Punto di ancoraggio x */
+            left: 100px;    /* Punto di ancoraggio y */
+            background-color: bisque;
+        }
+
+        /****************** Show stuff *******************/
+        #show-container {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(0, 145, 255);
+            border-left: solid 2px;
+            border-right: solid 2px;
+            height: 100vh;
+            top: 69px;  /* Change this line if you change the menu-container or the Fixe_h1 container*/
+            left: calc(100% - 200px);  /* Dimension of the show-container */
+            right: 0;  /* Add this line */
+            position: fixed;  
+            text-align: left;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+          }
+          
+        li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+        }
+        
+        /* Change the link color on hover */
+        li a:hover {
+        background-color: #555;
+        color: white;
+        }
+
+        /* Aggiungi uno stile al box di testo per nasconderlo inizialmente */
+        .dropdown-content {
+            display: none;
+            position: relative;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1;
+        }
+
+        /* Aggiungi uno stile al link per renderlo come un pulsante di menu a tendina 
+        .dropdown {
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        */
+
+        input{
+            width: 50px;
+        }
+
+    </style>
 </head>
-<body style="background-color: coral; font-family: Copperplate, Papyrus, fantasy;">
+<body>
+    <!--------------------------------------------------------------------------------------------->
+    <!------------------------------------------------>
+    <!---- MY TITLE ------------------------------------->
+    <div id="Fixe_h1">
+        <h1>FIXE</h1>
+    </div>
 
-    <h1 id="mainTitle">FIXE!</h1>
-    <h3>Ciao! Sei nell'indice</h3>
 
-    <!-- Label e input -->
-    <label for="w_idth">WIDTH:</label> 
-    <input type="text" id="w_idth"><br><br>
-    <!-- Label e input -->
-    <label for="h_eight">HEIGHT:</label> 
-    <input type="text" id="h_eight"><br><br>
-
-    <button id="myButton" style="background-color: #4CAF50;">Click me!</button>
-    <br><br><br>
+    <!---- MENU CONTAINER ------------------------------------------->
+    <div id="menu-button-container">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn-export btn-menu">Export</button> 
+        &nbsp;
+        <button class="btn-upsize btn-menu">Upsize</button> 
+        &nbsp;
+        <button class="btn-downsize btn-menu">Downsize</button> 
+    </div>
+    <!------------------------------------------------>
+    <!------------------------------------------------>
+    <!--------------------------------------------------------------------------------------------->
     
 
-    <!-- Il tag svg è un foglio bianco sul quale poniamo il nostro rect
-    Le dimensioni del foglio devono essere uguali o superiori
-    Alle dimensioni del "workspace" che desideriamo creare -->
-    <svg id="Motherspace" viewbox = "0 0 0 0"></svg>
+
+    <!------------------------------------------------>
+    <!------------------------------------------------>
+    <!-- RIGHT CONTAINER (tool container) ---------------------------------------------->
+    <!------------------------------------------------>
+    <div id="tools-btn-container">
+        <button class="btn-tool-select  btn-tool">   <img src="icon/select.svg" alt="Select SVG Icon" width="70px"/></button>
+        <button class="btn-tool-move    btn-tool">   <img src="icon/move.svg" alt="Move SVG Icon" width="70px"/></button>
+        <button class="btn-tool-circle  btn-tool">   <img src="icon/circle.svg" alt="Circle SVG Icon" width="70px"/></button>
+        <button class="btn-tool-rect    btn-tool">   <img src="icon/rectangle.svg" alt="Rect SVG Icon" width="70px"/></button>
+    </div>
+    <!------------------------------------------------>
+    <!-- SVG ---------------------------------------------->
+    <!------------------------------------------------>
+    <svg width="400px" height="200px" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg"></svg> <!--Non spostare il tag di chiusura-->>
+    <!------------------------------------------------>
+    <!-- LEFT CONTAINER (show container) ---------------------------------------------->
+    <!------------------------------------------------>
+    <div id="show-container">
+        <ul>
+            <li class="dropdown">
+                <a href="#levels" onclick="showContent('levels',event)">Levels</a>
+                <div class="dropdown-content" id="levels">Metti il mouse qui sopra...</div>
+            </li>
+            <li class="dropdown">
+                <a href="#transform" onclick="showContent('transform',event)">Transform</a>
+                <div class="dropdown-content" id="transform">
+
+                    <label for="x_input">X:</label>
+                    <input type="text" id="x_input" name="x_input">
+
+                    <label for="y_input">Y:</label>
+                    <input type="text" id="y_input" name="y_input"><br>
+
+                    <label for="w_input">W:</label>
+                    <input type="text" id="w_input" name="w_input">
+
+                    <label for="h_input">H:</label>
+                    <input type="text" id="h_input" name="h_input"><br>
+
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#contact" onclick="showContent('contact',event)">Contact</a>
+                <div class="dropdown-content" id="contact">Metti il mouse qui sopra...</div>
+            </li>
+            <li class="dropdown">
+                <a href="#about" onclick="showContent('about',event)">About</a>
+                <div class="dropdown-content" id ="about">Metti il mouse qui sopra...</div>
+            </li>
+        </ul>
+    </div>
+    <!------------------------------------------------>
+    <!------------------------------------------------>
+    <!--------------------------------------------------------------------------------------------->
 
 
-    <script src="./Mod_ExpandWorkspace.js"></script>
-    <script src="./Mod_Download.js"></script>
-    <script src="./Mod_Resize.js"></script>
+    <!--JAVASCRIPT---------------------------------------------->
+    <!--Funzioni del menu orizzontale (menu-button-container) ---------------------------------------------->
+    <script src="MenuHandler.js"></script>
+    <script src="Menu/Resize.js"></script>
+    <script src="Menu/Export.js"></script>
 
-    
-    <script src="./TOOL_Selected.js"></script>
-    <script src="./Tool_Shapes.js"></script>
-    <script src="./Tool_Selection.js"></script>
+    <!--Funzioni del menu sinistra  (tools-button-container) ---------------------------------------------->
+    <script src="ToolHandler.js"></script>     
+    <script src="Tool/ShapeHandler.js"></script>   <!-- Gestisce creazione forme--->
 
+    <!--Funzioni del menu destra  (show-button-container) ---------------------------------------------->
+    <script src="ShowboxHandler.js"></script> 
+    <script src="Show/Levels_Showbox.js"></script> 
+    <script src="Show/Transform_Showbox.js"></script> 
 
 </body>
 </html>
