@@ -3,7 +3,7 @@ A web-software that allows you to create vectorial graphics and export them in S
 Inspired by Adobe Illustrator.
 
 
-![Uploading FIXEimg.png…]()
+![Uploading FIXEimg]
 
 ### Development status:
   16 novembre 2022
